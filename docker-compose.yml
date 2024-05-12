@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  cadit:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: cadit_db
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    ports:
+      - 3308:3306
+    user: 1000:1000
+    environment:
+      MYSQL_DATABASE: 'homestead'
+      MYSQL_ROOT_PASSWORD : secret
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: homestead
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - cadit
