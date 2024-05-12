@@ -28,4 +28,4 @@ Already stated on `requirements.txt`
 ## PS 
 - Running `python pipeline.py` will seed the database by inserting movies, genre, actor dynamically. This may take a while since we check if the movie has new genre/star/director or not on each row.
 - Run `DDL/dump.sql` to create the schema and its data
-- Call `insertMovie` to insert new movie
+- Call `insertMovie(dict)` to insert new movie
